@@ -1,0 +1,80 @@
+#!/bin/sh
+
+printf "This is a simple Routine Tracker for my Daily, Weekly, Monthly tasks! \n\n"
+
+printf "How was your day today? \n"
+printf "Choose files to open: \n\n"
+
+printf "Type 1 for Daily List \n"
+printf "Type 2 for Weekly list \n"
+printf "Type 3 for Monthly List \n"
+
+read choice
+
+if [ "$choice" = "1" ];  then
+	if [ ! -d "./Daily" ]; then
+        	printf "creating Daily Directory \n"
+        	mkdir ./Daily
+	fi
+
+	if [ ! -d "./Daily/Reading.txt" ]; then
+		printf "Creating Daily/Reading.txt file \n"
+		touch ./Daily/Reading.txt
+	fi
+
+	 if [ ! -d "./Daily/Meditation.txt" ]; then
+                printf "Creating Daily/Meditation.txt file \n" 
+                touch ./Daily/Meditation.txt
+        fi
+
+        if [ ! -d "./Daily/WorkOnProject.txt" ]; then
+                printf "Creating Daily/WorkOnProject.txt file \n" 
+                touch ./Daily/WorkOnProject.txt
+        fi
+
+	cd Daily
+fi
+
+if [ "$choice" = "2" ];  then
+        if [ ! -d "./Weekly" ]; then
+                printf "creating Weekly Directory \n"
+                mkdir ./Weekly
+        fi
+
+        if [ ! -d "./Weekly/Gym.txt" ]; then
+                printf "Creating Weekly/Gym.txt file \n"
+                touch ./Weekly/Gym.txt
+        fi
+
+        if [ ! -d "./Weekly/Cleaning.txt" ]; then
+                printf "Creating Weekly/Cleaning.txt file \n"
+                touch ./Weekly/Cleaning.txt
+        fi
+
+        if [ ! -d "./Weekly/Cooking.txt" ]; then
+                printf "Creating Weekly/Cooking.txt file \n"
+                touch ./Weekly/Cooking.txt
+        fi
+
+	cd Weekly
+
+fi
+
+if [ "$choice" = "3" ];  then
+        if [ ! -d "./Monthly" ]; then
+                printf "creating Monthly Directory \n"
+                mkdir ./Monthly
+        fi
+
+        if [ ! -d "./Monthly/Haircut.txt" ]; then
+                printf "Creating Monthly/Haircut.txt file \n"
+                touch ./Monthly/Haircut.txt
+        fi
+
+	cd Monthly
+
+fi
+
+sleep 2
+
+vim
